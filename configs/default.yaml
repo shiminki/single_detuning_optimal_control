@@ -34,5 +34,5 @@ evaluation:
   batch_size: 2048
 
 paths:
-  checkpoint_dir: outputs/checkpoints
+  checkpoint_dir: /content/drive/MyDrive/Colab Notebooks/Single Qubit Control with single NN/
   plot_dir: outputs/plots
