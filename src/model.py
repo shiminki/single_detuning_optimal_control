@@ -28,7 +28,7 @@ class Encoder(nn.Module):
         self.L = L
         self.angle_features = angle_features
         in_dim = 6 if angle_features else 3
-        h = 2 * L
+        h = 8 * L
         # Spec uses bias=False throughout.
         self.net = nn.Sequential(
             nn.Linear(in_dim, h, bias=False),
