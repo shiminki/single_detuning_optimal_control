@@ -8,7 +8,7 @@ dataset:
   val_fraction: 0.01    # held-out targets used for evaluation/plot
 
 model:
-  L: 400                # number of pulse segments AND encoder hidden width unit
+  L: 512                # number of pulse segments AND encoder hidden width unit
   T_list_pi:            # T values expressed as multiples of pi
     - 4
     - 7
