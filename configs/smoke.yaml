@@ -1,0 +1,35 @@
+# Tiny CPU smoke-test config: validates the full pipeline runs end-to-end.
+
+seed: 0
+device: cpu
+
+dataset:
+  size: 2048
+  val_fraction: 0.1
+
+model:
+  L: 32
+  T_list_pi:
+    - 4
+    - 7
+    - 13
+
+training:
+  epochs: 1
+  batch_size: 256
+  delta_samples: 4
+  lr: 3.0e-3
+  weight_decay: 0.0
+  grad_clip: 1.0
+  warmup_steps: 5
+  precision: fp32
+  num_workers: 0
+  log_every: 5
+
+evaluation:
+  delta_samples: 16
+  batch_size: 256
+
+paths:
+  checkpoint_dir: outputs/checkpoints
+  plot_dir: outputs/plots

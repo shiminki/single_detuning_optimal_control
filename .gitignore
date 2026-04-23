@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+outputs/checkpoints/*.pt
+outputs/plots/*.png
+outputs/plots/*.pdf
+
+.venv/
+venv/
+task.txt

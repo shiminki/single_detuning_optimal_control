@@ -1,0 +1,38 @@
+# Defaults for the training pipeline.
+
+seed: 0
+device: cuda            # set to "cpu" for local dry-runs
+
+dataset:
+  size: 1000000
+  val_fraction: 0.01    # held-out targets used for evaluation/plot
+
+model:
+  L: 400                # number of pulse segments AND encoder hidden width unit
+  T_list_pi:            # T values expressed as multiples of pi
+    - 4
+    - 7
+    - 10
+    - 13
+    - 16
+    - 20
+
+training:
+  epochs: 20
+  batch_size: 4096      # number of target unitaries per step
+  delta_samples: 16     # Monte-Carlo δ draws per target per step
+  lr: 3.0e-4
+  weight_decay: 0.0
+  grad_clip: 1.0
+  warmup_steps: 500
+  precision: bf16       # "fp32" | "bf16"
+  num_workers: 4
+  log_every: 50
+
+evaluation:
+  delta_samples: 256    # δ draws used for the final fidelity plot
+  batch_size: 2048
+
+paths:
+  checkpoint_dir: outputs/checkpoints
+  plot_dir: outputs/plots
